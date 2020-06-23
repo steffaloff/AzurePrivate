@@ -1,0 +1,72 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "resourceGroup": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of resource group"
+            }
+        },
+        "virtualNetworkName": {
+            "type": "string",
+            "metadata": {
+                "description": "VNet Name"
+            }
+        },
+        "location": {
+            "type": "String",
+            "metadata": {
+                "description": "Location"
+            }
+        },
+        "FrontendSubnet": {
+            "type": "String",
+            "metadata": {
+                "description": "Subnet Name - Frontend"
+            }
+        },
+        "BackendSubnet": {
+            "type": "String",
+            "metadata": {
+                "description": "Subnet Name - Backend"
+            }
+        }
+    },
+    "functions": [],
+    "variables": {},
+    "resources": [
+        {
+        "name": "[parameters('virtualNetworkName')]",
+        "type": "Microsoft.Network/virtualNetworks",
+        "apiVersion": "2019-09-01",
+        "location": "[parameters('location')]",
+        "tags": {
+            "displayName": "DemoVNet1"
+        },
+        "properties": {
+            "addressSpace": {
+                "addressPrefixes": [
+                    "10.0.0.0/16"
+                ]
+            },
+            "subnets": [
+                {
+                    "name": "[parameters('FrontendSubnet')]",
+                    "properties": {
+                        "addressPrefix": "10.0.0.0/24"
+                    }
+                },
+                {
+                    "name": "[parameters('BackendSubnet')]",
+                    "properties": {
+                        "addressPrefix": "10.0.1.0/24"
+                    }
+                }
+            ]
+        }
+    }
+
+    ],
+    "outputs": {}
+}
