@@ -22,6 +22,22 @@
             "name": "[parameters('rgName')]",
             "properties": {},
             "tags": "[parameters('tags')]"
+        },
+        {
+            "name": "linkedDeployment1",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2019-10-01",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "https://github.com/steffaloff/AzurePrivate/azuredemodeploy.json",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parametersLink": {
+                    "uri": "https://github.com/steffaloff/AzurePrivate/azuredemodeploy.parameters.json",
+                    "contentVersion": "1.0.0.0"
+                }
+            }
         }
     ],
     "outputs": {}
