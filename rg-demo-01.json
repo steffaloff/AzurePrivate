@@ -26,16 +26,16 @@
         {
             "name": "linkedDeployment1",
             "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2019-10-01",
+            "apiVersion": "2019-05-01",
             "location": "[parameters('rgLocation')]",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "https://github.com/steffaloff/AzurePrivate/azuredemodeploy.json",
+                    "uri": "https://raw.githubusercontent.com/steffaloff/AzurePrivate/master/azuredemodeploy.json",
                     "contentVersion": "1.0.0.0"
                 },
                 "parametersLink": {
-                    "uri": "https://github.com/steffaloff/AzurePrivate/azuredemodeploy.parameters.json",
+                    "uri": "https://raw.githubusercontent.com/steffaloff/AzurePrivate/master/azuredemodeploy.parameters.json",
                     "contentVersion": "1.0.0.0"
                 }
             }

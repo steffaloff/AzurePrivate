@@ -34,7 +34,7 @@
         "name": "[parameters('virtualNetworkName')]",
         "type": "Microsoft.Network/virtualNetworks",
         "apiVersion": "2019-09-01",
-        "location": "[parameters('location')]",
+        "location": "[resourceGroup().location]",
         "tags": {
             "displayName": "DemoVNet1"
         },
@@ -58,7 +58,10 @@
                     }
                 }
             ]
-        }
+        },
+        "dependsOn": [
+            "rg-demo-01"
+        ]
     }
 
     ],
