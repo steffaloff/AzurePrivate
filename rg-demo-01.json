@@ -24,10 +24,14 @@
             "tags": "[parameters('tags')]"
         },
         {
-            "name": "linkedDeployment1",
+            "name": "VNetDeployment",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2019-05-01",
+            "resourceGroup": "[parameters('rgName')]",
             "location": "[parameters('rgLocation')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/resourceGroups/', parameters('rgName'))]"
+            ],
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
