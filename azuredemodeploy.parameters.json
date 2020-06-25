@@ -5,9 +5,6 @@
         "virtualNetworkName": {
             "value": "DemoVNet1"
         },
-        "location": {
-            "value": "norwayeast"
-        },
         "FrontendSubnet": {
             "value": "DemoSubnetFrontend"
         },

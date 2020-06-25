@@ -8,12 +8,7 @@
                 "description": "VNet Name"
             }
         },
-        "location": {
-            "type": "String",
-            "metadata": {
-                "description": "Location"
-            }
-        },
+        
         "FrontendSubnet": {
             "type": "String",
             "metadata": {
@@ -34,7 +29,6 @@
         "name": "[parameters('virtualNetworkName')]",
         "type": "Microsoft.Network/virtualNetworks",
         "apiVersion": "2019-09-01",
-        "location": "[parameters('location')]",
         "tags": {
             "displayName": "DemoVNet1"
         },
